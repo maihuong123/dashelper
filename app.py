@@ -34,26 +34,23 @@ app = Flask(__name__,static_url_path='')
 #----------------------- search
 import pymongo
 db_uri = "mongodb://huong:123456@ds025973.mlab.com:25973/data_kcal"
-
 db = pymongo.MongoClient(db_uri).get_default_database()
 kcal_collection = db['kcal']
 
-
-
-
-@app.route('/')
+@app.route('/',methods=['GET','POST'])
 def index():
     if request.method == 'POST':
-        x = request.form['name_search']
         def collect_choice(x):
             data_find = kcal_collection.find({'NAME': x})
             for i in data_find:
-                short_descript = print(i['SHORT_DESCRIPT'])
-                traffic_light = print("Traffic_light: ", i['TRAFFIC_LIGHT'])
-                carb = print("carb: ", i['CARB'])
-                kcal = print("kcal: ", i['KCAL'])
-            collect_choice(x.upper())
-            return redirect('search',short_descript = short_descript ,traffic_light = traffic_light,carb = carb ,kcal =kcal)
+                short_descript=i['SHORT_DESCRIPT']
+                traffic_light=i['TRAFFIC_LIGHT']
+                carb=i['CARB']
+                kcal= i['KCAL']
+            return [short_descript,traffic_light,carb,kcal]
+        n = str(request.form['name_search']).upper()
+        [short_descript, traffic_light, carb, kcal] = collect_choice(n)
+        return redirect(url_for('search',short_descript=short_descript,traffic_light=traffic_light,carb=carb,kcal=kcal))
     return render_template("index.html")
 
 @app.route('/search<short_descript>,<traffic_light>,<carb>,<kcal>')
@@ -80,6 +77,10 @@ def orders():
 
 @app.route('/BMI_request<bmr>,<BMI>,<calo>')
 def BMI_request(bmr,BMI,calo):
+    return render_template('BMI_request.html',bmr=bmr,BMI=BMI,calo=calo)
+
+@app.route('/test/<bmr>/<BMI>/<calo>')
+def test(bmr,BMI,calo):
     return render_template('BMI_request.html',bmr=bmr,BMI=BMI,calo=calo)
 
 @app.route('/BMI',methods=['GET','POST'])

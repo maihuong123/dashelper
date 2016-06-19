@@ -44,7 +44,7 @@ kcal_collection = db['kcal']
 @app.route('/')
 def index():
     if request.method == 'POST':
-        x = request.form['name']
+        x = request.form['name_search']
         def collect_choice(x):
             data_find = kcal_collection.find({'NAME': x})
             for i in data_find:
@@ -54,7 +54,7 @@ def index():
                 kcal = print("kcal: ", i['KCAL'])
             collect_choice(x.upper())
             return redirect('search',short_descript = short_descript ,traffic_light = traffic_light,carb = carb ,kcal =kcal)
-        return render_template("index.html")
+    return render_template("index.html")
 
 @app.route('/search<short_descript>,<traffic_light>,<carb>,<kcal>')
 def search(short_descript,traffic_light,carb,kcal):

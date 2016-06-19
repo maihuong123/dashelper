@@ -79,9 +79,6 @@ def orders():
 def BMI_request(bmr,BMI,calo):
     return render_template('BMI_request.html',bmr=bmr,BMI=BMI,calo=calo)
 
-@app.route('/test/<bmr>/<BMI>/<calo>')
-def test(bmr,BMI,calo):
-    return render_template('BMI_request.html',bmr=bmr,BMI=BMI,calo=calo)
 
 @app.route('/BMI',methods=['GET','POST'])
 def bmi():

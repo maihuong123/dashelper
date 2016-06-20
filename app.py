@@ -174,8 +174,20 @@ def index():
 def search(short_descript,traffic_light,carb,kcal):
     return render_template("search.html",short_descript = short_descript ,traffic_light = traffic_light,carb = carb ,kcal =kcal)
 
-@app.route('/index')
+@app.route('/index',methods=['GET','POST'])
 def index_return():
+    if request.method == 'POST':
+        def collect_choice(x):
+            data_find = kcal_collection.find({'NAME': x})
+            for i in data_find:
+                short_descript = i['SHORT_DESCRIPT']
+                traffic_light = i['TRAFFIC_LIGHT']
+                carb = i['CARB']
+                kcal = i['KCAL']
+            return [short_descript, traffic_light, carb, kcal]
+        n = str(request.form['name_search']).upper()
+        [short_descript, traffic_light, carb, kcal] = collect_choice(n)
+        return redirect(url_for('search', short_descript=short_descript, traffic_light=traffic_light, carb=carb, kcal=kcal))
     return render_template("index.html")
 # -------------------------------------------------
 @app.route('/lowcarb')

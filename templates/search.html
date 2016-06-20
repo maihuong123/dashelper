@@ -28,17 +28,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <script type="text/javascript" src="https%3A%2F%2Fcse.google.com%2Fcse/tools/onthefly?form=searchbox_demo&lang="></script>
-    <script>
-  (function() {
-    var cx = '016781376157794364777:vgmy23ggjdk';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
+
 
 </head>
 <body>
@@ -62,7 +52,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                               </li>
 							<li><a href="/BMI">BMI</a></li>
 							<li><a href="/About%20Us">ABOUT US</a></li>
-                            <li><a href="/login">LOGIN</a></li>
 								<div class="clearfix"> </div>
 						</ul>
 								<!-- script-for-nav -->
@@ -90,15 +79,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="main-1">
 		<div class="container">
 			<div class="register">
-				 <div class="register-top-grid">
+				 <div class="register-top-grid" style="font-size: 1em">
                          <div class="wow fadeInLeft" data-wow-delay="0.4s">
                              <span>SHORT DESCRIPT<label>*</label></span>
                             <span>{{ short_descript }}<label></label></span>
                          </div>
                          <div class="wow fadeInRight" data-wow-delay="0.4s">
-                             {% if  %}
-                             <span>TRAFFIC LIGHT<label>*</label></span>
-                            <span>{{ traffic_light }}<label></label></span>
+                             {% if traffic_light=="RED" %}
+                                 <span>TRAFFIC LIGHT<label>*</label></span>
+                                <span style="color: red">{{ traffic_light }}<label></label></span>
+                             {% elif traffic_light=="YELLOW" %}
+                                 <span>TRAFFIC LIGHT<label>*</label></span>
+                                <span style="color: yellow">{{ traffic_light }}<label></label></span>
+                             {% else %}
+                                <span>TRAFFIC LIGHT<label>*</label></span>
+                                <span style="color: green">{{ traffic_light }}<label></label></span>
+                             {% endif %}
                          </div>
                          <div class="wow fadeInRight" data-wow-delay="0.4s">
                              <span>CARB<label>*</label></span>

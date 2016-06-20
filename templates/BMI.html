@@ -62,7 +62,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                               </li>
 							<li><a href="/BMI">BMI</a></li>
 							<li><a href="/About%20Us">ABOUT US</a></li>
-                            <li><a href="/login">LOGIN</a></li>
 								<div class="clearfix"> </div>
 						</ul>
 								<!-- script-for-nav -->
@@ -92,7 +91,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="register">
 				 <div class="register-top-grid">
 					<h3>PERSONAL INFORMATION</h3>
-                     <form method="post">
+                     <form method="post" style="margin-bottom: -65px;">
                          <div class="wow fadeInLeft" data-wow-delay="0.4s">
                             <span>WEIGHT(kg)<label>*</label></span>
                             <input type="text" name="weight">
@@ -106,27 +105,42 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                              <input type="text" name="age">
                          </div>
                          <div class="wow fadeInRight" data-wow-delay="0.4s">
+                             <span>WEIGHT TARGET<label>*</label></span>
+                             <input type="text" name="target weight">
+                         </div>
+                         <div class="wow fadeInRight " data-wow-delay="0.4s">
+                             <span>MONTH<label>*</label></span>
+                             <input type="text" name="month">
+                         </div>
+                         <div class="wow fadeInRight" data-wow-delay="0.4s" style="width: 46%">
                              <span>GENDER<label>*</label></span>
-                             <select name="gender" id="country" onchange="change_country(this.value)" class="wow fadeInRight" type="text" style="color: black">
+                             <select name="gender" id="country" onchange="change_country(this.value)"class="wow fadeInRight" type="text" style="border: 1px solid #5B9822;  style="color: black">
                                                 <option >Male</option>
                                                 <option>Female</option>
                              </select>
+
                          </div>
-                          <div class="wow fadeInRight" data-wow-delay="0.4s">
-                             <span>LEVEL OF ACTIVITY<label>*</label></span>
-                             <select name="Level of activity" id="country" onchange="change_country(this.value)" class="wow fadeInRight" type="text" style="color: black">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                 <option>3</option>
-                                                 <option>4</option>
-                                                 <option>5</option>
+                         <div class="wow fadeInRight" data-wow-delay="0.4s" style="width: 46%">
+                             <span>GOAL<label>*</label></span>
+                             <select name="target" id="country" onchange="change_country(this.value)"class="wow fadeInRight" type="text" style="border: 1px solid #5B9822;  style="color: black">
+                                                <option >Lose weight</option>
+                                                <option>Gain weight</option>
                              </select>
                          </div>
-                         <button type="submit" class="acount-btn" >SUBMIT</button>
+                          <div class="wow fadeInRight" style="margin-top: -73px;width: 46%" data-wow-delay="0.4s">
+                             <span>LEVEL OF ACTIVITY<label>*</label></span>
+                             <select name="activities" id="country" onchange="change_country(this.value)" class="wow fadeInRight" type="text" style="border: 1px solid #5B9822; style="color: black">
+                                                <option >Little or no excercise</option>
+                                                <option>Light exercise (1-3 times/week)</option>
+                                                 <option>Moderate exercise (3-5 days/week)</option>
+                                                 <option>Heavy exercise (6-7 days/week)</option>
+                                                 <option>Very heavy exercise (physical job or exercise twice a day)</option>
+                             </select>
+                         </div>
+                         <button type="submit" class="acount-btn wow fadeInRight" style="margin-top: 24px;margin-left: 472px;">CALCULATE</button>
 				   </form>
 				</div>
-                  <div class="clearfix"> </div>
-                  <div class="clearfix"> </div>
+
 		   </div>
 		 </div>
 	</div>

@@ -62,7 +62,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                               </li>
 							<li><a href="/BMI">BMI</a></li>
 							<li><a href="/About%20Us">ABOUT US</a></li>
-                            <li><a href="/login">LOGIN</a></li>
 								<div class="clearfix"> </div>
 						</ul>
 								<!-- script-for-nav -->
@@ -93,40 +92,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				 <div class="register-top-grid">
 					<h3>PERSONAL INFORMATION</h3>
                      <div><h3>BMR</h3><div style="color: red">{{ bmr }}</div></div>
-                     <div><h3>BMI</h3><div style="color: red">{{ BMI }}</div></div>
+                     <div><h3>BMI</h3><div style="color: red">{{ BMI }},{{ print_bmi }}</div></div>
                      <div><h3>CALORIE</h3><div style="color: red">{{ calo }}</div></div>
-                     <form  method="post">
-                         <div class="wow fadeInLeft" data-wow-delay="0.4s">
-                            <span>WEIGHT(kg)<label>*</label></span>
-                            <input type="text" name="weight">
-                         </div>
-                         <div class="wow fadeInRight" data-wow-delay="0.4s">
-                            <span>HEIGHT(cm)<label>*</label></span>
-                            <input type="text" name="height">
-                         </div>
-                         <div class="wow fadeInRight" data-wow-delay="0.4s">
-                             <span>AGE<label>*</label></span>
-                             <input type="text" name="age">
-                         </div>
-                         <div class="wow fadeInRight" data-wow-delay="0.4s">
-                             <span>GENDER<label>*</label></span>
-                             <select name="gender" id="country" onchange="change_country(this.value)" class="wow fadeInRight" type="text" style="color: black">
-                                                <option >Male</option>
-                                                <option>Female</option>
-                             </select>
-                         </div>
-                        <div class="wow fadeInRight" data-wow-delay="0.4s">
-                             <span>LEVEL OF ACTIVITY<label>*</label></span>
-                             <select name="Level of activity" id="country" onchange="change_country(this.value)" class="wow fadeInRight" type="text" style="color: black">
-                                                <option >1</option>
-                                                <option>2</option>
-                                                 <option>3</option>
-                                                 <option>4</option>
-                                                 <option>5</option>
-                             </select>
-                         </div>
-                         <button type="submit" class="acount-btn" >SUBMIT</button>
-				   </form>
+                     <div><h3>BMI_NEW</h3><div style="color: red">{{ bmi2 }}</div></div>
+                     <div><h3>CALORIE TO EAT</h3><div style="color: red">{{ calorie_to_eat }}</div></div>
+                     <div><h3>CALORIE TO BURN</h3><div style="color: red">{{ calorie_to_burn }}</div></div>
+                     <img src="http://bariatrics.colquittregional.com/wp-content/uploads/2012/08/bmi-table.png">
 				</div>
                   <div class="clearfix"> </div>
                   <div class="clearfix"> </div>
